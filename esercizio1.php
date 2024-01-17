@@ -45,6 +45,10 @@ class Company {
 
     }
 
+    public function monthExpance($month){
+        return $this->tot_employees * self::$avg_wage * $month;
+    }
+
     public static function getTotalExpenseAll() {
         return self::$totExpenseAll;
     }
@@ -71,9 +75,13 @@ $company3->totExpenseAnnual();
 $company4->totExpenseAnnual();
 $company5->totExpenseAnnual();
 
+echo $company1->monthExpance((int)readline("Inserisci il numero di mesi"));
+echo $company2->monthExpance((int)readline("Inserisci il numero di mesi"));
+echo $company3->monthExpance((int)readline("Inserisci il numero di mesi"));
+echo $company4->monthExpance((int)readline("Inserisci il numero di mesi"));
+echo $company5->monthExpance((int)readline("Inserisci il numero di mesi"));
 
 $totExpanse = Company::getTotalExpenseAll();
 echo "Il totale di tutte le aziende è di €","$totExpanse","\n";
-
 
 ?>
